@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه پارس اسپیناس | Pars Spinas</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        :root {
+            --primary-blue: #1c2438;
+            --primary-red: #a31d26;
+            --bg-color: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; }
+
+        /* --- Navbar (منوی تیره) --- */
+        nav {
+            background-color: var(--primary-blue);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* استایل عکس لوگو در منو */
+        .nav-logo-img { height: 45px; width: auto; object-fit: contain; } 
+        
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #fff; font-weight: 500; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-red); }
+
+        /* --- استایل‌های عمومی بخش‌ها --- */
+        section { padding: 100px 5% 60px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .section-title { font-size: 2rem; color: var(--primary-blue); margin-bottom: 40px; position: relative; font-weight: 800; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background-color: var(--primary-red); border-radius: 2px; }
+
+        /* --- Hero Section (بخش اصلی با پس‌زمینه تیره برای دیده شدن لوگو) --- */
+        #home {
+            min-height: 100vh; justify-content: center;
+            /* گرادیانت تیره سرمه‌ای */
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0a0e17 100%);
+            padding-top: 120px;
+        }
+        
+        /* استایل عکس لوگو در وسط صفحه */
+        .hero-logo-img { max-width: 350px; width: 100%; height: auto; margin-bottom: 25px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+        
+        .hero-desc { max-width: 600px; font-size: 1.15rem; color: #e2e8f0; margin-bottom: 40px; }
+
+        .btn-instagram {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff; text-decoration: none; padding: 12px 30px; border-radius: 30px;
+            font-size: 1.1rem; font-weight: bold; box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4); transition: all 0.3s ease;
+        }
+        .btn-instagram:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(220, 39, 67, 0.6); }
+
+        /* --- About Section --- */
+        #about { background-color: #fff; }
+        .about-card { max-width: 800px; background: var(--bg-color); padding: 40px; border-radius: 15px; border-right: 5px solid var(--primary-blue); text-align: right; font-size: 1.1rem; line-height: 1.8; }
+
+        /* --- Contact Section --- */
+        #contact { background-color: var(--bg-color); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; max-width: 900px; }
+        .contact-box { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--primary-red); }
+        .contact-icon { width: 40px; height: 40px; fill: var(--primary-blue); margin-bottom: 15px; }
+        .contact-box h3 { color: var(--primary-blue); margin-bottom: 15px; font-weight: 800; }
+        .contact-box p { color: var(--text-light); direction: ltr; margin-bottom: 5px; }
+        .contact-box.address-box p { direction: rtl; line-height: 1.8; }
+        .btn-map { display: inline-block; background-color: var(--primary-blue); color: #fff; text-decoration: none; margin-top: 20px; padding: 10px 25px; border-radius: 30px; transition: 0.3s; }
+        .btn-map:hover { background-color: var(--primary-red); transform: translateY(-2px); }
+
+        /* --- Footer --- */
+        footer { background-color: var(--primary-blue); color: #fff; text-align: center; padding: 25px; font-size: 0.9rem; }
+
+        /* --- ریسپانسیو موبایل --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-logo-img { max-width: 280px; }
+            .about-card { padding: 25px; text-align: justify; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- منوی بالا -->
+    <nav>
+        <a href="#home">
+            <!-- فراخوانی عکس لوگو برای منو -->
+            <img src="logo.png" alt="پارس اسپیناس" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">خانه</a></li>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+        </ul>
+    </nav>
+
+    <!-- بخش اصلی معرفی (با پس‌زمینه تیره) -->
+    <section id="home">
+        <!-- فراخوانی عکس لوگو برای وسط صفحه -->
+        <img src="logo.png" alt="لوگو فروشگاه پارس اسپیناس" class="hero-logo-img">
+        
+        <p class="hero-desc">
+            مقصدی برای خریدی مطمئن و باکیفیت. برای مشاهده جدیدترین محصولات، اطلاع از قیمت‌ها و ثبت سفارش، به صفحه رسمی ما در اینستاگرام بپیوندید.
+        </p>
+        <a href="https://www.instagram.com/parsspinas?rpxt=MWxreXU3ZXdhM3EwaQ==" target="_blank" class="btn-instagram">بازدید از پیج اینستاگرام</a>
+    </section>
+
+    <!-- بخش درباره ما -->
+    <section id="about">
+        <h2 class="section-title">درباره ما</h2>
+        <div class="about-card">
+            مجموعه <strong>پارس اسپیناس</strong> با هدف ارائه محصولات باکیفیت و ایجاد تجربه‌ای متمایز در خرید، در شهر زیبای شیراز پایه‌گذاری شده است. ما بر این باوریم که اعتماد مشتریان، ارزشمندترین دارایی ماست. به همین دلیل، همواره تلاش می‌کنیم با ارائه پشتیبانی قدرتمند، قیمت‌های رقابتی و تنوع بی‌نظیر، پاسخگوی نیازهای شما همراهان گرامی باشیم.
+        </div>
+    </section>
+
+    <!-- بخش تماس با ما -->
+    <section id="contact">
+        <h2 class="section-title">تماس و آدرس</h2>
+        <div class="contact-grid">
+            <div class="contact-box">
+                <svg class="contact-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <h3>شماره‌های تماس</h3>
+                <p>071-36540404-6 (ثابت)</p>
+                <p>0917-090-3314</p>
+                <p>0917-850-0614</p>
+                <p>0917-077-7930</p>
+            </div>
+            <div class="contact-box address-box">
+                <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <h3>آدرس فروشگاه</h3>
+                <p>شیراز، بلوار چمران، انتهای بلوار نیایش، نبش کوچه ١٤</p>
+                <a href="https://maps.app.goo.gl/jSpqbrKie2rLmk468" target="_blank" class="btn-map">مسیریابی در گوگل مپ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- پاورقی -->
+    <footer>
+        © ۲۰۲۶ پارس اسپیناس. طراحی و توسعه برای ارائه بهترین خدمات.
+    </footer>
+
+</body>
+</html>
